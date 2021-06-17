@@ -1,2 +1,13 @@
 @import "defaults";
 
+.poker {
+  display: flex;
+
+  &__container {
+    flex: 4;
+  }
+
+  &__result {
+    flex: 1;
+  }
+}
