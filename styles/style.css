@@ -16,15 +16,29 @@ body {
 }
 
 .poker {
+  height: 100%;
+}
+.poker__container {
   display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 .poker__container__grid {
+  align-self: stretch;
+  box-shadow: 0 0 20px gray;
+  padding: 0.5rem;
   height: 100%;
   flex: 4;
   display: grid;
   grid-template-columns: repeat(13, 1fr);
   grid-template-rows: repeat(13, 1fr);
   grid-gap: 1rem;
+}
+.poker__container__grid__btn.played {
+  background: red;
+}
+.poker__container__grid__btn {
+  cursor: pointer;
 }
 .poker__container__result {
   flex: 1;
