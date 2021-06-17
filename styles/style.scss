@@ -6,31 +6,37 @@
   &__container {
     display: flex;
     flex-direction: column;
-    align-items: center;
+
+    &__result {
+      flex: 1;
+      min-height: 5rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 3rem;
+    }
 
     &__grid {
-      align-self: stretch;
       box-shadow: 0 0 20px gray;
       padding: .5rem;
       height: 100%;
-      flex: 4;
+      flex: 1;
       display: grid;
       grid-template-columns: repeat(13, 1fr);
       grid-template-rows: repeat(13, 1fr);
       grid-gap: 1rem;
 
       &__btn.played {
-        background: red;
+        background: rgb(255, 150, 150);
       }
 
       &__btn {
         cursor: pointer;
-        
+        border: none;
+        padding: .4rem .5rem;
+        background: rgb(226, 226, 226);
+        border-radius: .5rem;
       }
-    }
-
-    &__result {
-      flex: 1;
     }
   }
 

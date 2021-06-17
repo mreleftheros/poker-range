@@ -21,25 +21,32 @@ body {
 .poker__container {
   display: flex;
   flex-direction: column;
+}
+.poker__container__result {
+  flex: 1;
+  min-height: 5rem;
+  display: flex;
+  justify-content: center;
   align-items: center;
+  font-size: 3rem;
 }
 .poker__container__grid {
-  align-self: stretch;
   box-shadow: 0 0 20px gray;
   padding: 0.5rem;
   height: 100%;
-  flex: 4;
+  flex: 1;
   display: grid;
   grid-template-columns: repeat(13, 1fr);
   grid-template-rows: repeat(13, 1fr);
   grid-gap: 1rem;
 }
 .poker__container__grid__btn.played {
-  background: red;
+  background: #ff9696;
 }
 .poker__container__grid__btn {
   cursor: pointer;
-}
-.poker__container__result {
-  flex: 1;
+  border: none;
+  padding: 0.4rem 0.5rem;
+  background: #e2e2e2;
+  border-radius: 0.5rem;
 }/*# sourceMappingURL=style.css.map */

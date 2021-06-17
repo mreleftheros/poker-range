@@ -6,23 +6,25 @@
 
 const pokerContainer = document.getElementById("pokerContainer");
 
+// create grid with cards automatically when dom is ready
 const createGrid = () => {
   const gridElement = document.createElement("div");
   gridElement.classList.add("poker__container__grid");
+  gridElement.id = "gridElement";
   let output = "";
   let cards = ["A", "K", "Q", "J", "T", "9", "8", "7", "6", "5", "4", "3", "2"];
 
   for (let i = 0; i < 13; i++) {
     for (let j = 0; j < 13; j++) {
-      output = cards[i] + cards[j];
-
-      if (i < j)
-        output += "s";
+      
+      if (i < j) {
+        output = cards[i] + cards[j] + "s";
+      }
       else if (i > j) {
-        let helper = output[0];
-        output[0] = output[1];
-        output[1] = helper;
-        output += "o";
+        output = cards[j] + cards[i] + "o";
+      }
+      else {
+        output = cards[i] + cards[j];
       }
 
       const buttonElement = document.createElement("button");
@@ -36,4 +38,13 @@ const createGrid = () => {
   pokerContainer.appendChild(gridElement);
 };
 
-createGrid();
+const markBtn = e => {
+  let target = e.target;
+
+  if (target.tagName === "BUTTON")
+    target.classList.toggle("played");
+}
+
+window.addEventListener("DOMContentLoaded", createGrid);
+pokerContainer.addEventListener("click", markBtn);
+pokerContainer.addEventListener("click", updateResult);
