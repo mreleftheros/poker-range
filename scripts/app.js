@@ -5,6 +5,7 @@
 // 13x6 + 78x12 + 78x4 = 1326
 
 const pokerContainer = document.getElementById("pokerContainer");
+const pokerResult = document.getElementById("pokerResult");
 let score = 0;
 let total = 1326;
 
@@ -55,7 +56,10 @@ const markBtn = e => {
 };
 
 const updateResult = () => {
-  let result = 
+  let result = score / total * 100;
+  let resultString = `${result.toFixed(2)}%`;
+
+  pokerResult.textContent = resultString;
 }
 
 const updateScore = e => {
