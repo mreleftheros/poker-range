@@ -18,9 +18,14 @@ body {
 .poker {
   display: flex;
 }
-.poker__container {
+.poker__container__grid {
+  height: 100%;
   flex: 4;
+  display: grid;
+  grid-template-columns: repeat(13, 1fr);
+  grid-template-rows: repeat(13, 1fr);
+  grid-gap: 1rem;
 }
-.poker__result {
+.poker__container__result {
   flex: 1;
 }/*# sourceMappingURL=style.css.map */

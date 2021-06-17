@@ -4,10 +4,19 @@
   display: flex;
 
   &__container {
-    flex: 4;
+
+    &__grid {
+      height: 100%;
+      flex: 4;
+      display: grid;
+      grid-template-columns: repeat(13, 1fr);
+      grid-template-rows: repeat(13, 1fr);
+      grid-gap: 1rem;
+    }
+
+    &__result {
+      flex: 1;
+    }
   }
 
-  &__result {
-    flex: 1;
-  }
 }
