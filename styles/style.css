@@ -30,6 +30,10 @@ body {
   align-items: center;
   font-size: 3rem;
 }
+.poker__container__result__number {
+  margin-left: 1rem;
+  color: crimson;
+}
 .poker__container__grid {
   box-shadow: 0 0 20px gray;
   padding: 0.5rem;

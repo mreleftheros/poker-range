@@ -57,9 +57,11 @@ const markBtn = e => {
 
 const updateResult = () => {
   let result = score / total * 100;
-  let resultString = `${result.toFixed(2)}%`;
+  let resultPercent = result.toFixed(2);
 
-  pokerResult.textContent = resultString;
+  pokerResult.innerHTML = `
+  Poker Range: <span class="poker__container__result__number">${resultPercent}%</span>
+  `;
 }
 
 const updateScore = e => {
