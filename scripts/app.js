@@ -5,6 +5,8 @@
 // 13x6 + 78x12 + 78x4 = 1326
 
 const pokerContainer = document.getElementById("pokerContainer");
+let score = 0;
+let total = 1326;
 
 // create grid with cards automatically when dom is ready
 const createGrid = () => {
@@ -16,19 +18,24 @@ const createGrid = () => {
 
   for (let i = 0; i < 13; i++) {
     for (let j = 0; j < 13; j++) {
+      const buttonElement = document.createElement("button");
+      buttonElement.classList.add("poker__container__grid__btn");
+
+
       
       if (i < j) {
         output = cards[i] + cards[j] + "s";
+        buttonElement.setAttribute("data-value", "4");
       }
       else if (i > j) {
         output = cards[j] + cards[i] + "o";
+        buttonElement.setAttribute("data-value", "12");
       }
       else {
         output = cards[i] + cards[j];
+        buttonElement.setAttribute("data-value", "6");
       }
-
-      const buttonElement = document.createElement("button");
-      buttonElement.classList.add("poker__container__grid__btn");
+      
       buttonElement.textContent = output;
 
       gridElement.appendChild(buttonElement);
@@ -41,10 +48,27 @@ const createGrid = () => {
 const markBtn = e => {
   let target = e.target;
 
-  if (target.tagName === "BUTTON")
+  if (target.tagName === "BUTTON") {
     target.classList.toggle("played");
+    updateScore(e);
+  }
+};
+
+const updateResult = () => {
+  let result = 
 }
+
+const updateScore = e => {
+  let value = +e.target.dataset.value;
+
+  if(e.target.classList.contains("played")) {
+    score += value;
+  } else {
+    score -= value;
+  }
+
+  updateResult();
+};
 
 window.addEventListener("DOMContentLoaded", createGrid);
 pokerContainer.addEventListener("click", markBtn);
-pokerContainer.addEventListener("click", updateResult);
